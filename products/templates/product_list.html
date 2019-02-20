@@ -8,6 +8,9 @@
 <body>
 {% block content %}
 这是产品页面的内容
+{% for product in products.all %}
+{{product.title}}
+{% endfor %}
 {% endblock content %}
 </body>
 </html>
