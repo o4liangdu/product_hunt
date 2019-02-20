@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "theme.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+
+<body>
+{% block content %}
+<h2 align="center">登录Product Hunt</h2>
+<form method="POST" action="{% url '登录页面' %}" align="center">
+    {% csrf_token %}<!--跨站点访问请求-->
+    用户名：&emsp;<input type="text" name="用户名"><br>
+    密码：&emsp;&emsp;<input type="password" name="密码">
+    <p style="color: red" >{{错误}}</p>
+    <input class="btn btn-primary" type="submit" value="登录">
+</form>
+{% endblock content %}
+</body>
+</html>
